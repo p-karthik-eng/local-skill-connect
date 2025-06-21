@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'location_permission_screen.dart';
+import 'home_screen.dart';
 
 class OTPScreen extends StatelessWidget {
   final List<TextEditingController> otpControllers = List.generate(
@@ -55,9 +55,10 @@ class OTPScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (_) => LocationPermissionScreen()),
+                  MaterialPageRoute(builder: (_) => const HomeScreen()),
+                  (route) => false,
                 );
               },
               style: ElevatedButton.styleFrom(
